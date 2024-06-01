@@ -21,15 +21,11 @@ class SongController extends AbstractController {
         $songDirectory = $projectRoot . '/content/songs/';
         $filePath = $songDirectory . $name . '.md';
 
-        try {
-            $content = $this->markdownParser->parseFile($filePath);
-        } catch (Exception $e) {
-            $content = 'This song does not exist.';
-            throw $e;
-        }
+        ['meta' => $meta, 'html' => $content] = $this->markdownParser->parseFile($filePath);
 
         return $this->render('song/index.html.twig', [
             'controller_name' => 'SongController',
+            'title' => $meta['title'] ?? null,
             'content' => $content,
         ]);
     }

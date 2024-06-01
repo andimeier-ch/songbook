@@ -1,4 +1,6 @@
-# Guete Vater
+---
+title: Guete Vater
+---
 
 ## Verse 1
 Da si Zite i mim Läbe<br>
