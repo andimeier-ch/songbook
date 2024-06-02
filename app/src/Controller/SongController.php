@@ -22,7 +22,7 @@ class SongController extends AbstractController {
 
         ['meta' => $meta, 'html' => $content] = $this->markdownWithMetaParser->parseFile($filePath);
 
-        return $this->render('song/index.html.twig', [
+        return $this->render('song/show.html.twig', [
             'controller_name' => 'SongController',
             'title' => $meta['title'] ?? null,
             'content' => $content,

@@ -1,16 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Song List</h1>
+{% block title %}FEG Langenthal Lieder{% endblock %}
 
-    <ul>
-        {% for song in songs %}
-            <li>
-                <a href="{{ path('show_song', {'name': song.fileName}) }}">
-                    {{ song.title }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/css/song-list.css') }}">
 {% endblock %}
 
+{% block body %}
+    <header class="c-header">
+        <h1 class="e-heading e-heading--song-title">
+            FEG Langenthal Lieder
+        </h1>
+    </header>
+
+    <main class="l-main">
+        <ol class="c-song-list">
+
+            {% for song in songs %}
+                {% include 'song/list-item.html.twig' with {
+                    title: song.title,
+                    fileName: song.fileName,
+                } only %}
+            {% endfor %}
+
+        </ol>
+    </main>
+{% endblock %}
