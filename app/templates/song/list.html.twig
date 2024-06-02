@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Song List</h1>
+
+    <ul>
+        {% for song in songs %}
+            <li>
+                <a href="{{ path('show_song', {'name': song.fileName}) }}">
+                    {{ song.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
