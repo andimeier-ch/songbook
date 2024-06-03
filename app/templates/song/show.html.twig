@@ -1,3 +1,13 @@
+{#
+/**
+ * Available variables:
+ * - title
+ * - artist
+ * - copyright
+ * - content
+ */
+#}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}{{ title }}{% endblock %}
@@ -17,10 +27,17 @@
         {{ content|raw }}
     </main>
 
-    <footer class="l-footer c-song-footer">
-        <p class="c-song-footer__item">{{ artist }}</p>
-        <p class="c-song-footer__item">{{ copyright }}</p>
-    </footer>
+    {% if artist or copyright %}
+        <footer class="l-footer c-song-footer">
+            {% if artist %}
+                <p class="c-song-footer__item">{{ artist }}</p>
+            {% endif %}
+
+            {% if copyright %}
+                <p class="c-song-footer__item">{{ copyright }}</p>
+            {% endif %}
+        </footer>
+    {% endif %}
 
     <a class="c-button" href="{{ path('song_list') }}">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
