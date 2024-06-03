@@ -5,6 +5,7 @@
 :root {
     --background-color: #333;
     --font-color: #fff;
+    --side-padding: 20px;
 }
 
 html {
@@ -31,7 +32,20 @@ body {
     opacity: 0.8;
 }
 
-.c-song {
+.l-header {
+    position: sticky;
+    top: -2rem;
+    display: flex;
+    align-items: center;
+    padding: 3rem var(--side-padding) 1rem;
+    background-color: var(--background-color);
+}
+
+.l-main {
+    padding: 0 var(--side-padding) 6rem;
+}
+
+.l-song {
     h2 {
         margin: 2.8em 0 0.5em;
         line-height: 1.2;
@@ -48,31 +62,33 @@ body {
     }
 }
 
-.l-main {
-    padding: 0 20px 64px;
+.l-footer {
+    padding: 2rem var(--side-padding) 2rem;
 }
 
-.c-header {
-    position: sticky;
-    top: -2rem;
-    display: flex;
-    align-items: center;
-    padding: 3rem 20px 1rem;
-    background-color: var(--background-color);
+.c-song-footer {
+    font-size: 0.8rem;
+    border-top: 1px solid var(--font-color);
+    opacity: 0.8;
+}
+
+.c-song-footer__item {
+    margin: 0 0 1em 0;
 }
 
 .c-button {
     position: fixed;
-    right: 1rem;
+    right: 0;
     top: 50lvh;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
-    padding: 12px;
-    border-radius: 50%;
+    background-color: var(--background-color);
+    border-radius: 50% 0 0 50%;
     border: 1px solid var(--font-color);
+    border-right: none;
 
     svg {
         width: 22px;

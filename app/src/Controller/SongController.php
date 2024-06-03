@@ -25,6 +25,8 @@ class SongController extends AbstractController {
         return $this->render('song/show.html.twig', [
             'controller_name' => 'SongController',
             'title' => $meta['title'] ?? null,
+            'artist' => $meta['artist'] ?? null,
+            'copyright' => $meta['copyright'] ?? null,
             'content' => $content,
         ]);
     }

@@ -7,15 +7,20 @@
 {% endblock %}
 
 {% block body %}
-    <header class="c-header">
+    <header class="l-header">
         <h1 class="e-heading e-heading--song-title">
             {{ title }}
         </h1>
     </header>
 
-    <main class="l-main c-song">
+    <main class="l-main l-song">
         {{ content|raw }}
     </main>
+
+    <footer class="l-footer c-song-footer">
+        <p class="c-song-footer__item">{{ artist }}</p>
+        <p class="c-song-footer__item">{{ copyright }}</p>
+    </footer>
 
     <a class="c-button" href="{{ path('song_list') }}">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

@@ -17,7 +17,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #222;
-    /*background-color: var(--background-color);*/
     color: var(--font-color);
 }
 
@@ -75,6 +74,10 @@ body {
     &:focus,
     &:active {
         color: var(--font-color);
+    }
+
+    &:focus,
+    &:active {
         opacity: 0.8;
     }
 
