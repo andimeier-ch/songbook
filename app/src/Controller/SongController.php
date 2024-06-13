@@ -30,7 +30,7 @@ class SongController extends AbstractController {
         ]);
     }
 
-    #[Route('/songs', name: 'song_list')]
+    #[Route('/', name: 'song_list')]
     public function listSongs(): Response {
         $songRepository = new SongRepository();
         $songs = $songRepository->listSongs();
