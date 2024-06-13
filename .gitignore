@@ -1,3 +1,5 @@
 .idea
 
+# Server files
 /app/composer.phar
+/app/public/.htaccess
